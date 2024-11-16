@@ -1,0 +1,132 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background-color: #1c1c1e;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    color: #32cd32;
+    margin: 0;
+}
+
+header a {
+    color: #32cd32;
+    text-decoration: none;
+}
+
+header a:hover {
+    color: #a4ffa4;
+}
+
+main {
+    width: 80%;
+    max-width: 800px;
+    margin-top: 30px;
+}
+
+h2 {
+    text-align: center;
+    color: #32cd32;
+    margin-bottom: 20px;
+}
+
+.empty-message {
+    text-align: center;
+    font-size: 18px;
+    color: #ff5733;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #32cd32;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tr:hover {
+    background-color: #e0e0e0;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #1c1c1e;
+    color: #32cd32;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.total h3 {
+    margin: 0;
+}
+
+.total p {
+    margin: 0;
+    font-weight: bold;
+}
+
+.btn {
+    background-color: #32cd32;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #228b22;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1c1c1e;
+    color: #32cd32;
+    width: 100%;
+    margin-top: auto;
+}

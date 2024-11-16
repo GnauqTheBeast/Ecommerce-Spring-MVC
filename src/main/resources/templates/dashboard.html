@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bookstore Dashboard</title>
+    <link rel="stylesheet" href="/dashboard.css">
+</head>
+<body>
+<header>
+    <div class="navbar">
+        <div class="logo">
+            <h1>Quang Ecommerce</h1>
+        </div>
+        <div class="menu">
+            <a href="/books">Product</a>
+            <a href="/cart">Cart [<span th:text="${cartSize}">0</span>]</a>
+            <span th:if="${customer != null}" class="username" th:text="${customer}"></span>
+            <a th:if="${customer == null}" href="/login">Login</a>
+        </div>
+    </div>
+</header>
+
+<!-- Search Bar -->
+<section class="search-bar">
+    <form method="get" action="/books/search">
+        <input type="text" name="keyword" placeholder="Search products..." required>
+        <button type="submit">Search</button>
+    </form>
+</section>
+
+<!-- Main Content Section -->
+<main>
+    <h2>List of Books (<span th:text="${books.size()}"></span>)</h2>
+    <div class="book-grid">
+        <div class="book-card" th:each="book : ${books}">
+            <img th:src="${book.image}" alt="Book Cover" class="book-cover"/>
+            <h3 th:text="${book.title}">Book Title</h3>
+            <p class="price" th:text="${book.price}">300,000 đ</p>
+            <a th:href="@{/books/details/{id}(id=${book.id})}" class="btn">View Book</a>
+
+            <form th:action="@{/cart/add/{id}(id=${book.id})}" method="post">
+                <button type="submit" class="btn">Add to Cart</button>
+            </form>
+        </div>
+    </div>
+
+</main>
+
+<footer>
+    <p>&copy; 2024 QuangEcommerce. All rights reserved.</p>
+</footer>
+</body>
+</html>

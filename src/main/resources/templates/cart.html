@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Cart</title>
+  <link rel="stylesheet" href="/cart.css">
+</head>
+<body>
+<h1>Your Cart</h1>
+
+<div th:if="${cartBooks.isEmpty()}">
+  <p>Your cart is empty.</p>
+</div>
+
+<div th:if="${!cartBooks.isEmpty()}">
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Price</th>
+    </tr>
+    <tr th:each="book : ${cartBooks}">
+      <td th:text="${book.title}"></td>
+      <td th:text="${book.author}"></td>
+      <td th:text="${book.price}"></td>
+    </tr>
+  </table>
+
+  <form action="/cart/checkout" method="post">
+    <button type="submit">Checkout</button>
+  </form>
+</div>
+
+<a href="/books">Continue Shopping</a>
+</body>
+</html>
