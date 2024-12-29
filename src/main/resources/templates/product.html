@@ -2,8 +2,8 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Book List</title>
-    <link rel="stylesheet" href="/books.css">
+    <title>Product List</title>
+    <link rel="stylesheet" href="/product.css">
 </head>
 <body>
 
@@ -31,14 +31,12 @@
 
 <!-- Main Content -->
 <main>
-    <h2>Available Books</h2>
+    <h2>Available Product</h2>
 
-    <!-- Hiển thị nếu không có sách -->
     <div th:if="${books == null || books.isEmpty()}">
         <p>No books found.</p>
     </div>
 
-    <!-- Danh sách sách -->
     <div class="book-grid" th:if="${books != null && !books.isEmpty()}">
         <div class="book-card" th:each="book : ${books}">
             <div class="book-image-wrapper">
@@ -47,9 +45,8 @@
             <h3 th:text="${book.title}">Book Title</h3>
             <p th:text="${book.author}">Author</p>
             <p class="price" th:text="${book.price + ' đ'}">300,000 đ</p>
-            <a th:href="@{/books/details/{id}(id=${book.id})}" class="btn">View Book</a>
+            <a th:href="@{/books/details/{id}(id=${book.id})}" class="btn">View Product</a>
 
-            <!-- Nút "Add to Cart" -->
             <form th:action="@{/cart/add/{id}(id=${book.id})}" method="post">
                 <button type="submit" class="btn add-to-cart">Add to Cart</button>
             </form>

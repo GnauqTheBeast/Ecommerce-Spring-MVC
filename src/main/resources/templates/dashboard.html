@@ -13,13 +13,18 @@
         <div class="menu">
             <a href="/books">Product</a>
             <a href="/cart">Cart [<span th:text="${cartSize}">0</span>]</a>
-            <span th:if="${customer != null}" class="username" th:text="${customer}"></span>
+            <div class="dropdown" th:if="${customer != null}">
+                <span class="username" th:text="${customer.getUsername()}"></span>
+                <div class="dropdown-content">
+                    <a href="/settings">Settings</a>
+                    <a href="/logout">Logout</a>
+                </div>
+            </div>
             <a th:if="${customer == null}" href="/login">Login</a>
         </div>
     </div>
 </header>
 
-<!-- Search Bar -->
 <section class="search-bar">
     <form method="get" action="/books/search">
         <input type="text" name="keyword" placeholder="Search products..." required>
@@ -27,9 +32,8 @@
     </form>
 </section>
 
-<!-- Main Content Section -->
 <main>
-    <h2>List of Books (<span th:text="${books.size()}"></span>)</h2>
+    <h2>List of Items (<span th:text="${books.size()}"></span>)</h2>
     <div class="book-grid">
         <div class="book-card" th:each="book : ${books}">
             <img th:src="${book.image}" alt="Book Cover" class="book-cover"/>

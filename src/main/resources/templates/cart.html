@@ -5,31 +5,39 @@
   <link rel="stylesheet" href="/cart.css">
 </head>
 <body>
-<h1>Your Cart</h1>
+<div class="cart-container">
+  <h1 class="cart-title">Your Cart</h1>
 
-<div th:if="${cartBooks.isEmpty()}">
-  <p>Your cart is empty.</p>
+  <div th:if="${cartBooks.isEmpty()}" class="empty-cart">
+    <p>Your cart is empty.</p>
+    <a href="/books" class="continue-shopping">Continue Shopping</a>
+  </div>
+
+  <div th:if="${!cartBooks.isEmpty()}">
+    <table class="cart-table">
+      <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Price</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="book : ${cartBooks}">
+        <td th:text="${book.title}"></td>
+        <td th:text="${book.author}"></td>
+        <td th:text="${book.price}"></td>
+      </tr>
+      </tbody>
+    </table>
+
+    <div class="cart-actions">
+      <form action="/cart/checkout" method="post">
+        <button type="submit" class="checkout-btn">Checkout</button>
+      </form>
+      <a href="/books" class="continue-shopping">Continue Shopping</a>
+    </div>
+  </div>
 </div>
-
-<div th:if="${!cartBooks.isEmpty()}">
-  <table>
-    <tr>
-      <th>Title</th>
-      <th>Author</th>
-      <th>Price</th>
-    </tr>
-    <tr th:each="book : ${cartBooks}">
-      <td th:text="${book.title}"></td>
-      <td th:text="${book.author}"></td>
-      <td th:text="${book.price}"></td>
-    </tr>
-  </table>
-
-  <form action="/cart/checkout" method="post">
-    <button type="submit">Checkout</button>
-  </form>
-</div>
-
-<a href="/books">Continue Shopping</a>
 </body>
 </html>

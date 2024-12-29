@@ -23,14 +23,6 @@ public class CartController {
     @Autowired
     private BookService bookService;
 
-    // Display the cart page
-//    @GetMapping("/cart")
-//    public String viewCart(Model model) {
-//        List<Book> cartBooks = bookService.getCartBooks();
-//        model.addAttribute("cartBooks", cartBooks);
-//        return "cart";
-//    }
-
     @GetMapping("/cart")
     public String viewCart(Model model) {
         List<Book> cartBooks = bookService.getCartBooks();

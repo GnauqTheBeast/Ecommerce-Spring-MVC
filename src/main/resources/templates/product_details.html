@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Book Details</title>
-  <link rel="stylesheet" href="/book_details.css">
+  <link rel="stylesheet" href="/product_details.css">
 </head>
 <body>
 
@@ -25,13 +25,11 @@
     </form>
   </div>
 
-  <!-- Hiển thị nếu không tìm thấy sách -->
   <div th:if="${book == null}">
     <p>Book not found.</p>
   </div>
 </main>
 
-<!-- Footer -->
 <footer>
   <p>&copy; 2024 Quang Ecommerce. All rights reserved.</p>
 </footer>

@@ -1,7 +1,9 @@
 package com.example.demo.controller;
 
 import com.example.demo.entity.Book;
+import com.example.demo.entity.Customers;
 import com.example.demo.service.BookService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,10 +19,10 @@ public class WelcomeController {
     private BookService bookService;
 
     @GetMapping("/")
-    public String viewDashboard(Model model, Principal principal) {
-        if (principal != null) {
-            String username = principal.getName();
-
+    public String viewDashboard(Model model, HttpSession session) {
+        Customers customer = (Customers) session.getAttribute("customers");
+        if (customer != null) {
+            String username = customer.getUsername();
             List<Book> books = bookService.getAllBooks();
 
             model.addAttribute("books", books);

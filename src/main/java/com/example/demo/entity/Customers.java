@@ -13,9 +13,9 @@ import java.time.LocalDate;
 public class Customers {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", columnDefinition = "CHAR(36)")
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", unique = true, nullable = false)
+    private Long id;
 
     @Column(name = "username")
     private String username;
@@ -38,11 +38,11 @@ public class Customers {
     @Column(name = "registration_date")
     private LocalDate registration_date;
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -100,5 +100,10 @@ public class Customers {
 
     public void setRegistration_date(LocalDate registration_date) {
         this.registration_date = registration_date;
+    }
+
+    @Override
+    public String toString() {
+        return "username: " + this.username;
     }
 }

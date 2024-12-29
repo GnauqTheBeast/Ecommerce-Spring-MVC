@@ -46,7 +46,7 @@ public class CustomerController {
         }
         customers.setRegistration_date(LocalDate.now());
         customerService.saveCustomer(customers);
-        return "redirect:/";
+        return "redirect:/login";
     }
 
     @PostMapping("/login")
@@ -54,12 +54,18 @@ public class CustomerController {
         boolean isAuthenticated = customerService.authenticateCustomer(customers.getUsername(), customers.getPassword());
         if (isAuthenticated) {
             Customers authenticatedCustomers = customerService.findByCustomer(customers.getUsername());
-            session.setAttribute("customers", authenticatedCustomers);  // Store in session
-            return "redirect:/";
+            session.setAttribute("customers", authenticatedCustomers);
+            return "redirect:/dashboard";
         }
 
         model.addAttribute("error", "Invalid username or password");
         return "login";
+    }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        session.invalidate();
+        return "redirect:/dashboard";
     }
 
     @GetMapping("/customer")
