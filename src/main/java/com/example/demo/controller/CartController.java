@@ -4,6 +4,8 @@ import com.example.demo.entity.Book;
 import com.example.demo.entity.Order;
 import com.example.demo.service.BookService;
 import com.example.demo.service.OrderService;
+import com.example.demo.utils.SessionUtils;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,7 +13,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.security.Principal;
 import java.util.List;
 
 @Controller
@@ -24,7 +25,11 @@ public class CartController {
     private BookService bookService;
 
     @GetMapping("/cart")
-    public String viewCart(Model model) {
+    public String viewCart(Model model, HttpSession session) {
+        if (!SessionUtils.isLoggedIn(session)) {
+            return "redirect:/login";
+        }
+
         List<Book> cartBooks = bookService.getCartBooks();
         model.addAttribute("cartBooks", cartBooks);
         model.addAttribute("cartSize", bookService.getCartSize());
@@ -32,8 +37,8 @@ public class CartController {
     }
 
     @PostMapping("/cart/checkout")
-    public String checkout(Model model, Principal principal) {
-        if (principal == null) {
+    public String checkout(Model model, HttpSession session) {
+        if (!SessionUtils.isLoggedIn(session)) {
             return "redirect:/login";
         }
 
@@ -52,10 +57,12 @@ public class CartController {
         return "order_confirmation";
     }
 
-
-    // Add book to cart
     @PostMapping("/cart/add")
-    public String addToCart(@RequestParam Long bookId) {
+    public String addToCart(@RequestParam Long bookId, HttpSession session) {
+        if (!SessionUtils.isLoggedIn(session)) {
+            return "redirect:/login";
+        }
+
         bookService.addBookToCart(bookId);
         return "redirect:/books";
     }

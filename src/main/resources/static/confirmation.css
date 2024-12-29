@@ -1,21 +1,30 @@
+.navbar {
+    width: 100vw; /* Full viewport width */
+    position: fixed; /* Stick to the top of the page */
+    top: 0;
+    left: 0;
+    background-color: #1c1c1e;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f8f8;
     margin: 0;
     padding: 0;
+    padding-top: 70px; /* Add padding to avoid overlap with the fixed navbar */
     display: flex;
     flex-direction: column;
     align-items: center;
     color: #333;
 }
 
-.navbar {
-    width: 100%;
-    background-color: #1c1c1e;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+#paypal-button-container {
+    margin-top: 20px;
 }
 
 .navbar h1 {
@@ -74,6 +83,7 @@ main {
     cursor: pointer;
     font-size: 18px;
     margin-top: 20px;
+    margin-right: 40px;
     transition: background-color 0.3s ease;
 }
 

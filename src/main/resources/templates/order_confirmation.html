@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Order Confirmation</title>
     <link rel="stylesheet" href="/confirmation.css">
+    <script src="https://www.paypal.com/sdk/js?client-id=AZAewYTqVlODzYnP7s-CKoSGIhkYd7rUHEp0WxAjlbKQyuBmwTzxDUqh75FteC31PYLwR87o48lJMrZb&currency=USD"></script>
 </head>
 <body>
 
@@ -16,16 +17,44 @@
 
 <main>
     <div class="confirmation-container">
-        <h1>Thank you for your purchase!</h1>
-        <p>Your order has been placed successfully.</p>
+        <h1>Checkout</h1>
+        <p>Total: <span th:text="${order.getTotalPrice()}"></span> USD</p>
 
-        <a href="/books" class="btn">Back to Shop</a>
+        <!-- PayPal Button Container -->
+        <div id="paypal-button-container"></div>
     </div>
 </main>
 
 <footer>
     <p>&copy; 2024 Quang Ecommerce. All rights reserved.</p>
 </footer>
+
+<script>
+    paypal.Buttons({
+        createOrder: function (data, actions) {
+            return actions.order.create({
+                purchase_units: [{
+                    amount: {
+                        value: /* Replace with Thymeleaf dynamic total */ document.querySelector('[th\\:text]').textContent
+                    }
+                }]
+            });
+        },
+        onApprove: function (data, actions) {
+            return actions.order.capture().then(function (details) {
+                alert('Transaction completed by ' + details.payer.name.given_name);
+                window.location.href = "/order/success";
+            });
+        },
+        onCancel: function (data) {
+            alert('Payment cancelled.');
+        },
+        onError: function (err) {
+            console.error(err);
+            alert('An error occurred during the transaction.');
+        }
+    }).render('#paypal-button-container');
+</script>
 
 </body>
 </html>

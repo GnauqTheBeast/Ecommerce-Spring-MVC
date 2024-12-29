@@ -44,7 +44,7 @@
             </div>
             <h3 th:text="${book.title}">Book Title</h3>
             <p th:text="${book.author}">Author</p>
-            <p class="price" th:text="${book.price + ' đ'}">300,000 đ</p>
+            <p class="price" th:text="${book.price + ' $'}">300,000 đ</p>
             <a th:href="@{/books/details/{id}(id=${book.id})}" class="btn">View Product</a>
 
             <form th:action="@{/cart/add/{id}(id=${book.id})}" method="post">

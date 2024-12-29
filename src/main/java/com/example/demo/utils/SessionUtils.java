@@ -8,4 +8,8 @@ public class SessionUtils {
     public static Customers getLoggedInCustomer(HttpSession session) {
         return (Customers) session.getAttribute("customers");
     }
+
+    public static boolean isLoggedIn(HttpSession session) {
+        return session != null && session.getAttribute("customers") != null;
+    }
 }
