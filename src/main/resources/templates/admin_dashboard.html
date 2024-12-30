@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/admin_dashboard.css">
+</head>
+<body>
+<div class="dashboard-container">
+    <header class="dashboard-header">
+        <h1>Admin Dashboard</h1>
+        <p>Welcome back, Admin! Manage and monitor your system efficiently.</p>
+    </header>
+
+    <div class="error-message" th:if="${error}">
+        <p th:text="${error}"></p>
+    </div>
+
+    <nav class="dashboard-nav">
+        <ul>
+            <li><a href="/admin/manage-products">Manage Products</a></li>
+            <li><a href="/admin/manage-orders">Manage Orders</a></li>
+            <li><a href="/admin/customers">View Customers</a></li>
+            <li><a href="/admin/reports">View Reports</a></li>
+            <li><a href="/admin/logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <main class="dashboard-content">
+        <section class="overview">
+            <h2>Overview</h2>
+            <p>Get insights into your business performance, customer activities, and system operations.</p>
+        </section>
+
+        <section class="features">
+            <div class="feature">
+                <h3>Products</h3>
+                <p>Manage your product inventory, update pricing, and add new products.</p>
+                <a href="/admin/manage-products" class="btn">Go to Products</a>
+            </div>
+
+            <div class="feature">
+                <h3>Orders</h3>
+                <p>View and process customer orders efficiently and track shipping status.</p>
+                <a href="/admin/manage-orders" class="btn">Go to Orders</a>
+            </div>
+
+            <div class="feature">
+                <h3>Reports</h3>
+                <p>Analyze sales, revenue, and performance metrics to make informed decisions.</p>
+                <a href="/admin/reports" class="btn">View Reports</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="dashboard-footer">
+        <p>&copy; 2024 Quang Ecommerce. All rights reserved.</p>
+    </footer>
+</div>
+</body>
+</html>

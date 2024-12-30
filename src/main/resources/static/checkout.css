@@ -1,6 +1,7 @@
+/* Tổng thể body */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
+    background-color: #f4f9f4; /* Nền xanh lá nhạt */
     margin: 0;
     padding: 0;
     color: #333;
@@ -9,8 +10,9 @@ body {
     align-items: center;
 }
 
+/* Header */
 header {
-    background-color: #1c1c1e;
+    background-color: #2c6e49; /* Xanh lá đậm */
     width: 100%;
     padding: 20px;
     display: flex;
@@ -19,43 +21,48 @@ header {
 }
 
 header h1 {
-    color: #32cd32;
+    color: #ffffff; /* Màu trắng */
     margin: 0;
 }
 
 header a {
-    color: #32cd32;
+    color: #a7d7c5; /* Xanh lá nhạt */
     text-decoration: none;
+    font-weight: bold;
 }
 
 header a:hover {
-    color: #a4ffa4;
+    color: #f1f9f1; /* Xanh lá rất nhạt khi hover */
 }
 
+/* Main Content */
 main {
     width: 80%;
     max-width: 800px;
     margin-top: 30px;
 }
 
+/* Tiêu đề */
 h2 {
     text-align: center;
-    color: #32cd32;
+    color: #2c6e49; /* Xanh lá đậm */
     margin-bottom: 20px;
 }
 
+/* Thông báo trống */
 .empty-message {
     text-align: center;
     font-size: 18px;
-    color: #ff5733;
+    color: #e63946; /* Màu đỏ nhạt */
     margin-bottom: 20px;
 }
 
+/* Bảng */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
-    background-color: white;
+    background-color: #ffffff; /* Nền trắng */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     overflow: hidden;
@@ -68,24 +75,25 @@ table th, table td {
 }
 
 table th {
-    background-color: #32cd32;
-    color: white;
+    background-color: #2c6e49; /* Xanh lá đậm */
+    color: #ffffff; /* Màu trắng */
 }
 
 table tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #f9f9f9; /* Xám rất nhạt */
 }
 
 table tr:hover {
-    background-color: #e0e0e0;
+    background-color: #f4f9f4; /* Nền xanh lá nhạt khi hover */
 }
 
+/* Tổng Cộng */
 .total {
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    background-color: #1c1c1e;
-    color: #32cd32;
+    background-color: #2c6e49; /* Xanh lá đậm */
+    color: #ffffff; /* Màu trắng */
     border-radius: 10px;
     margin-bottom: 20px;
 }
@@ -99,9 +107,10 @@ table tr:hover {
     font-weight: bold;
 }
 
+/* Nút */
 .btn {
-    background-color: #32cd32;
-    color: white;
+    background-color: #2c6e49; /* Xanh lá đậm */
+    color: #ffffff;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -113,20 +122,32 @@ table tr:hover {
 }
 
 .btn:hover {
-    background-color: #228b22;
+    background-color: #1e5036; /* Xanh lá tối */
 }
 
+/* Nút Checkout */
 .checkout-btn {
     width: 100%;
     padding: 15px;
     font-size: 18px;
+    background-color: #2c6e49; /* Xanh lá đậm */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
+.checkout-btn:hover {
+    background-color: #1e5036; /* Xanh lá tối */
+}
+
+/* Footer */
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #1c1c1e;
-    color: #32cd32;
+    background-color: #2c6e49; /* Xanh lá đậm */
+    color: #ffffff; /* Màu trắng */
     width: 100%;
     margin-top: auto;
 }

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Products</title>
+    <link rel="stylesheet" href="/manage_products.css">
+</head>
+<body>
+<div class="dashboard-container">
+    <header class="dashboard-header">
+        <h1>Manage Products</h1>
+    </header>
+
+    <div class="search-bar">
+        <form action="/admin/manage-products" method="get">
+            <input type="text" name="keyword" placeholder="Search by title or author" value="">
+            <button type="submit">Search</button>
+            <a href="/admin/add-product" class="btn">Add New Product</a>
+        </form>
+    </div>
+
+    <div class="product-list">
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Price</th>
+                <th>Image</th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="book : ${books}">
+                <td th:text="${book.id}"></td>
+                <td th:text="${book.title}"></td>
+                <td th:text="${book.author}"></td>
+                <td th:text="${book.getPrice()}"></td>
+                <td>
+                    <img th:src="${book.image}" alt="Book Image" style="width: 50px; height: auto;">
+                </td>
+                <td>
+                    <a th:href="@{/admin/edit-product/{id}(id=${book.id})}" class="btn">Edit</a>
+                </td>
+                <td>
+                    <a th:href="@{/admin/delete-product/{id}(id=${book.id})}" class="btn delete-btn">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

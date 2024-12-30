@@ -1,0 +1,98 @@
+/* Search Bar */
+.search-bar {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-bar button, .search-bar .btn {
+    background-color: #2c6e49; /* Xanh lá đậm */
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.search-bar button:hover, .search-bar .btn:hover {
+    background-color: #1e5036; /* Xanh lá tối */
+}
+
+/* Product List Table */
+.product-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.product-list th, .product-list td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.product-list th {
+    background-color: #2c6e49; /* Xanh lá đậm */
+    color: #ffffff;
+}
+
+.product-list td img {
+    display: block;
+    margin: 0 auto;
+}
+
+.error-message {
+    margin: 20px auto;
+    padding: 15px;
+    width: 90%;
+    background-color: #ff6f61; /* Màu đỏ nhạt */
+    color: #ffffff;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Styles */
+.btn {
+    background-color: #2c6e49; /* Xanh lá đậm */
+    color: #ffffff; /* Màu chữ trắng */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    margin: 0 5px;
+    display: inline-block;
+}
+
+/* Edit Button */
+.btn.edit-btn {
+    background-color: #4caf50; /* Xanh lá tươi */
+}
+
+.btn.edit-btn:hover {
+    background-color: #388e3c; /* Xanh lá tối hơn khi hover */
+}
+
+/* Delete Button */
+.btn.delete-btn {
+    background-color: #e63946; /* Đỏ nhạt */
+}
+
+.btn.delete-btn:hover {
+    background-color: #d62828; /* Đỏ đậm khi hover */
+}

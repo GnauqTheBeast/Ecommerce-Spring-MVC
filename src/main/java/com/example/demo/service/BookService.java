@@ -16,9 +16,12 @@ public class BookService {
 
     private List<Book> cartBooks = new ArrayList<>();
 
-    // Lấy tất cả các sách từ cơ sở dữ liệu
     public List<Book> getAllBooks() {
         return bookRepository.findAll();
+    }
+
+    public void addBook(Book book) {
+        bookRepository.save(book);
     }
 
     public List<Book> searchBooks(String keyword) {
@@ -47,5 +50,13 @@ public class BookService {
 
     public int getCartSize() {
         return cartBooks.size();
+    }
+
+    public void updateBook(Book book) {
+        bookRepository.save(book);
+    }
+
+    public void deleteBookById(Long id) {
+        bookRepository.deleteById(id);
     }
 }

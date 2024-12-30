@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer List</title>
+    <link rel="stylesheet" href="/customer_list.css">
+</head>
+<body>
+<div class="dashboard-container">
+    <header class="dashboard-header">
+        <h1>Customer List</h1>
+        <p>View all registered customers.</p>
+    </header>
+
+    <!-- Thông báo lỗi nếu có -->
+    <div class="error-message" th:if="${error}">
+        <p th:text="${error}"></p>
+    </div>
+
+    <!-- Bảng danh sách khách hàng -->
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Address</th>
+            <th>Registration Date</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Lặp qua danh sách khách hàng -->
+        <tr th:each="customer : ${customers}">
+            <td th:text="${customer.id}"></td>
+            <td th:text="${customer.username}"></td>
+            <td th:text="${customer.full_name}"></td>
+            <td th:text="${customer.email}"></td>
+            <td th:text="${customer.phone_number}"></td>
+            <td th:text="${customer.address}"></td>
+            <td th:text="${customer.registration_date}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <!-- Nút quay lại -->
+    <div class="action-buttons">
+        <a href="/admin/dashboard" class="btn">Back to Dashboard</a>
+    </div>
+</div>
+</body>
+</html>

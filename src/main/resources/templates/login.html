@@ -23,12 +23,10 @@
         </div>
     </form>
 
-    <!-- Hiển thị thông báo lỗi nếu có -->
     <div th:if="${error}" class="error-message">
         <p th:text="${error}"></p>
     </div>
 
-    <!-- Nút đăng ký tài khoản và quay về Dashboard -->
     <div class="action-buttons">
         <a href="/register" class="btn register-btn">Create Account</a>
         <a href="/dashboard" class="btn dashboard-btn">Back to Dashboard</a>

@@ -1,0 +1,193 @@
+/* admin_dashboard.css */
+
+/* Reset Styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eafaf1; /* Xanh lá nhạt */
+    color: #333;
+    padding: 0 20px;
+}
+
+/* Container */
+.dashboard-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Header */
+.dashboard-header {
+    background-color: #2c6e49; /* Xanh lá đậm */
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+.dashboard-header h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.dashboard-header p {
+    font-size: 16px;
+}
+
+/* Navigation */
+.dashboard-nav ul {
+    display: flex;
+    justify-content: space-around;
+    background-color: #a7d7c5; /* Xanh lá nhạt */
+    padding: 15px 0;
+}
+
+.dashboard-nav ul li a {
+    text-decoration: none;
+    color: #2c6e49; /* Xanh lá đậm */
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.dashboard-nav ul li a:hover {
+    color: #1e5036; /* Xanh lá tối */
+}
+
+/* Main Content */
+.dashboard-content {
+    padding: 20px;
+}
+
+.overview {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.overview h2 {
+    color: #2c6e49; /* Xanh lá đậm */
+    margin-bottom: 10px;
+}
+
+.features {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.feature {
+    background-color: #f4f9f5; /* Xanh lá rất nhạt */
+    border: 1px solid #a7d7c5; /* Xanh lá nhạt */
+    border-radius: 8px;
+    padding: 20px;
+    flex: 1;
+    text-align: center;
+}
+
+.feature h3 {
+    color: #2c6e49; /* Xanh lá đậm */
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.feature .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2c6e49; /* Xanh lá đậm */
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.feature .btn:hover {
+    background-color: #1e5036; /* Xanh lá tối */
+}
+
+/* Footer */
+.dashboard-footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #f4f9f5; /* Xanh lá rất nhạt */
+    font-size: 14px;
+    color: #888;
+}
+
+/* Header styling */
+.dashboard-container h1 {
+    color: #2c6e49; /* Xanh lá đậm */
+    font-size: 24px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #a7d7c5; /* Xanh lá nhạt */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    text-align: left;
+    font-weight: bold;
+    color: #2c6e49;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+}
+
+input:focus {
+    outline: none;
+    border-color: #2c6e49; /* Xanh lá đậm */
+    box-shadow: 0 0 5px rgba(44, 110, 73, 0.5); /* Ánh sáng xanh lá */
+}
+
+/* Button styling */
+button {
+    background-color: #2c6e49; /* Xanh lá đậm */
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #1e5036; /* Xanh lá tối */
+}
+
+.error-message {
+    margin: 20px auto;
+    padding: 15px;
+    width: 90%;
+    background-color: #ff6f61; /* Màu đỏ nhạt */
+    color: #ffffff;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 14px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

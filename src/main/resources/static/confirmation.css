@@ -1,9 +1,10 @@
+/* Thanh điều hướng (Navbar) */
 .navbar {
     width: 100vw; /* Full viewport width */
     position: fixed; /* Stick to the top of the page */
     top: 0;
     left: 0;
-    background-color: #1c1c1e;
+    background-color: #2c6e49; /* Xanh lá đậm */
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
@@ -13,7 +14,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f8f8;
+    background-color: #f4f9f4; /* Nền xanh lá nhạt */
     margin: 0;
     padding: 0;
     padding-top: 70px; /* Add padding to avoid overlap with the fixed navbar */
@@ -23,17 +24,20 @@ body {
     color: #333;
 }
 
+/* PayPal Button Container */
 #paypal-button-container {
     margin-top: 20px;
 }
 
+/* Logo trong Navbar */
 .navbar h1 {
-    color: #32cd32;
+    color: #ffffff; /* Màu trắng */
     margin: 0;
 }
 
+/* Liên kết trong Navbar */
 .navbar a {
-    color: #e0e0e0;
+    color: #ffffff; /* Màu trắng */
     text-decoration: none;
     font-weight: bold;
     padding: 10px 20px;
@@ -42,21 +46,23 @@ body {
 }
 
 .navbar a:hover {
-    background-color: #32cd32;
-    color: white;
+    background-color: #1e5036; /* Xanh lá tối khi hover */
+    color: #ffffff;
 }
 
+/* Main Content */
 main {
     width: 100%;
     max-width: 600px;
     margin-top: 40px;
-    background-color: white;
+    background-color: #ffffff; /* Nền trắng */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 30px;
     text-align: center;
 }
 
+/* Confirmation Container */
 .confirmation-container {
     display: flex;
     flex-direction: column;
@@ -64,7 +70,7 @@ main {
 }
 
 .confirmation-container h1 {
-    color: #32cd32;
+    color: #2c6e49; /* Xanh lá đậm */
     font-size: 32px;
     margin-bottom: 20px;
 }
@@ -74,9 +80,10 @@ main {
     margin-bottom: 20px;
 }
 
+/* Nút */
 .btn {
-    background-color: #32cd32;
-    color: white;
+    background-color: #2c6e49; /* Xanh lá đậm */
+    color: #ffffff;
     padding: 12px 20px;
     border-radius: 5px;
     text-decoration: none;
@@ -88,15 +95,15 @@ main {
 }
 
 .btn:hover {
-    background-color: #228b22;
+    background-color: #1e5036; /* Xanh lá tối */
 }
 
-/* Chân trang */
+/* Chân trang (Footer) */
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #1c1c1e;
-    color: #32cd32;
+    background-color: #2c6e49; /* Xanh lá đậm */
+    color: #ffffff; /* Màu trắng */
     width: 100%;
     margin-top: 40px;
 }
