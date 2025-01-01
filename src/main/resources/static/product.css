@@ -126,6 +126,12 @@ body {
     border-radius: 8px;
 }
 
+h2 {
+    font-size: 24px;
+    margin: 10px 20px;
+    color: #2c6e49; /* Xanh lá đậm */
+}
+
 /* Tiêu đề sách */
 h3 {
     font-size: 18px;

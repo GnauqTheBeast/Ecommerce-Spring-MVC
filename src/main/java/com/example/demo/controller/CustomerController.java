@@ -65,24 +65,6 @@ public class CustomerController {
         return "redirect:/dashboard";
     }
 
-    @GetMapping("/customer")
-    public String getAllCustomers(Model model) {
-        model.addAttribute("customers", customerService.getAllCustomers());
-        return "customerList";
-    }
-
-    @GetMapping("/customer/{id}")
-    public String getCustomerById(@PathVariable String id, Model model) {
-        model.addAttribute("customers", customerService.getCustomerById(id));
-        return "customerDetails";
-    }
-
-    @GetMapping("/customer/new")
-    public String createCustomerForm(Model model) {
-        model.addAttribute("customers", new Customers());
-        return "customerForm";
-    }
-
     @PostMapping("/customer")
     public String saveCustomer(@ModelAttribute("customers") Customers customers) {
         customerService.saveCustomer(customers);

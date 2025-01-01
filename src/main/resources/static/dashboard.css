@@ -7,6 +7,13 @@ body {
     color: #333;
 }
 
+h2 {
+    color: #2c6e49; /* Xanh lá đậm */
+    margin: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
 /* Navbar */
 .navbar {
     background-color: #2c6e49; /* Xanh lá đậm */

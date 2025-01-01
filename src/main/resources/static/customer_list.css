@@ -1,4 +1,8 @@
 /* Table */
+body {
+    background: #eafaf1;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;

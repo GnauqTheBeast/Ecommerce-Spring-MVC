@@ -38,7 +38,9 @@
         <div class="book-card" th:each="book : ${books}">
             <img th:src="${book.image}" alt="Book Cover" class="book-cover"/>
             <h3 th:text="${book.title}">Book Title</h3>
-            <p class="price" th:text="${book.price}">300,000 đ</p>
+            <p class="author" th:text="'by ' + ${book.author}">by Author</p>
+<!--            <p class="description" th:text="${book.description}">Description</p>-->
+            <p class="price" th:text="${book.price} + '$'">300,000 đ</p>
             <a th:href="@{/books/details/{id}(id=${book.id})}" class="btn">View Book</a>
 
             <form th:action="@{/cart/add/{id}(id=${book.id})}" method="post">
@@ -50,7 +52,7 @@
 </main>
 
 <footer>
-    <p>&copy; 2024 QuangEcommerce. All rights reserved.</p>
+    <p>&copy; 2024 Quang Ecommerce. All rights reserved.</p>
 </footer>
 </body>
 </html>

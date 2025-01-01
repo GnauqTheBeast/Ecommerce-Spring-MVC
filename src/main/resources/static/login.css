@@ -8,7 +8,7 @@ body, h2, form, input, button, div {
 /* Body styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #eafaf1; /* Xanh lá nhạt */
+    background: linear-gradient(135deg, #2c6e49, #f0f4f8);
     display: flex;
     justify-content: center;
     align-items: center;

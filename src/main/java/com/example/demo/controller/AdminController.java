@@ -122,21 +122,18 @@ public class AdminController {
 
     @PostMapping("/edit-product/{id}")
     public String editProduct(@PathVariable Long id, @ModelAttribute("book") Book book, HttpSession session, Model model) {
-        // Kiểm tra quyền admin
         Admin admin = (Admin) session.getAttribute("admin");
         if (admin == null || !(admin.getRole() == AdminRole.SUPER_ADMIN || admin.getRole() == AdminRole.PRODUCT_ADMIN)) {
             model.addAttribute("error", "You don't have permission to edit products.");
             return "admin_dashboard";
         }
 
-        // Tìm sản phẩm theo ID
         Book existingBook = bookService.findBookById(id);
         if (existingBook == null) {
             model.addAttribute("error", "Product not found.");
             return "admin_dashboard";
         }
 
-        // Kiểm tra dữ liệu form
         if (book.getTitle() == null || book.getTitle().isEmpty() ||
                 book.getAuthor() == null || book.getAuthor().isEmpty() ||
                 book.getPrice() <= 0) {
@@ -144,7 +141,6 @@ public class AdminController {
             return "edit_book";
         }
 
-        // Cập nhật thông tin sản phẩm
         existingBook.setTitle(book.getTitle());
         existingBook.setAuthor(book.getAuthor());
         existingBook.setImage(book.getImage());

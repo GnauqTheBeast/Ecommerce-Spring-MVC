@@ -13,12 +13,18 @@
 
 <main>
   <div class="book-details-container" th:if="${book != null}">
-    <!-- Hình ảnh sách -->
+
     <img th:src="${book.image}" alt="Book Cover" class="book-cover"/>
 
     <h2 th:text="${book.title}">Book Title</h2>
     <p><strong>Author:</strong> <span th:text="${book.author}">Author Name</span></p>
+
+    <p class="description">
+      <strong>Description:</strong> <span th:text="${book.description}">Book description here...</span>
+    </p>
+
     <p class="price"><strong>Price:</strong> <span th:text="${book.price} + ' $'">300,000 đ</span></p>
+
 
     <form th:action="@{/cart/add/{id}(id=${book.id})}" method="post">
       <button type="submit">Add to Cart</button>
